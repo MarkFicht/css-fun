@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin: 70px;
+    font-size: 35px;
+  }
+}
+
+//**********************************
+//--- LOGO M.F.
+//**********************************
+.border-m-f {
+  border: 4px solid darkseagreen;
+  width: 310px;
+  height: 125px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-m-f {
+  width: 250px;
+  height: 90px;
+  //border: 1px solid white;
+  display: flex;
+  overflow: hidden;
+
+  .m {
+    width: 67%;
+    height: 100%;
+    position: relative;
+  }
+  .f {
+    width: 33%;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.letter-4, .letter-3, .letter-2, .letter-1 {
+  background-color: white;
+  height: 100px;
+  width: 25px;
+  position: absolute;
+}
+
+.letter-2 {
+  right: 64px;
+}
+
+.letter-4 {
+  right: 0;
+}
+
+.letter-3, .letter-1 {
+  transform: rotate(35deg);
+  right: 38px;
+  top: -5px;
+  height: 125px;
+}
+
+.letter-1 {
+  right: 103px;
+}
+
+.letter-5, .letter-6 {
+  margin-left: 7px;
+  height: 22px;
+  width: 50px;
+  background-color: darkseagreen;
+}
+
+.letter-6 {
+  position: absolute;
+  top: 35px;
+  width: 30px;
+}
+
+//**********************************
+//--- DANCING CUBE
+//**********************************
+$cubeSize: 100px;
+$axisZCube: 50px; // 1/2 cubeSize
+
+.dancing-cube {
+  margin: auto;
+  width: $cubeSize;
+  height: $cubeSize;
+  position: relative;
+  //perspective: 1000px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 1s transform linear;
+  //perspective: 1000px;
+}
+
+.cube > div {
+  width: $cubeSize;
+  height: $cubeSize;
+  border: 7px solid black;
+  //border-radius: 50%;
+  //margin: 200px; // IMPORTANT FOR DANCING CUBE ! for X Y
+  //margin: 200px 0;
+  margin: 0 200px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.front {
+  background-color: green;
+  transform: rotateX(0deg) translateZ($axisZCube);
+}
+
+.back {
+  background-color: blue;
+  transform: rotateY(180deg) translateZ($axisZCube);
+}
+
+.bottom {
+  background-color: red;
+  transform: rotateX(-90deg) translateZ($axisZCube);
+}
+
+.top {
+  background-color: blueviolet;
+  transform: rotateX(90deg) translateZ($axisZCube);
+}
+
+.right {
+  background-color: orange;
+  transform: rotateY(90deg) translateZ($axisZCube);
+}
+
+.left {
+  background-color: pink;
+  transform: rotateY(-90deg) translateZ($axisZCube);
+}
+
+.move-left-cube {
+  transform: rotateX(30deg) rotateY(0deg);
+}
+
+.dance {  // working only with margin in .cube > div
+  animation: dancing infinite 3s linear;
+}
+
+@keyframes dancing {
+  from { transform: rotateX(10deg) rotateY(0deg); }
+  to { transform: rotateX(10deg) rotateY(360deg); }
+}
+
+//**********************************
+//--- FUTURE GALLERY
+//**********************************
+$galleryHeight: 150px;
+$galleryWidth: 200px;
+$axisZGallery: 300px;
+
+.fixed {
+  width: 900px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.future-gallery {
+  margin: 0 auto;
+  width: $galleryHeight;
+  height: $galleryWidth;
+  position: relative;
+  perspective: 2000px;
+}
+
+.gallery-m-f {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.gallery-m-f > div {
+  width: $galleryWidth;
+  height: $galleryHeight;
+  border: 3px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: .9;
+}
+
+.gallery-future1 {
+  background-color: aquamarine;
+  transform: rotateY(0deg) translateZ($axisZGallery);
+}
+
+.gallery-future2 {
+  background-color: aquamarine;
+  transform: rotateY(60deg) translateZ($axisZGallery);
+}
+
+.gallery-future3 {
+  background-color: aquamarine;
+  transform: rotateY(120deg) translateZ($axisZGallery);
+}
+
+.gallery-future4 {
+  background-color: aquamarine;
+  transform: rotateY(180deg) translateZ($axisZGallery);
+}
+
+.gallery-future5 {
+  background-color: aquamarine;
+  transform: rotateY(240deg) translateZ($axisZGallery);
+}
+
+.gallery-future6 {
+  background-color: aquamarine;
+  transform: rotateY(300deg) translateZ($axisZGallery);
+}
+
+.move-gallery {
+  //transform: rotateX(5deg) rotateY(0deg);
+  animation: gallery-animation infinite 20s linear;
+}
+
+@keyframes gallery-animation {
+  from { transform: rotateX(-1deg) rotateY(0deg); }
+  50% { transform: rotateX(1deg) rotateY(-180deg); }
+  to { transform: rotateX(-1deg) rotateY(-360deg); }
+}
