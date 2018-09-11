@@ -214,10 +214,12 @@ $galleryColor: aquamarine;
 
 .future-gallery {
   margin: 0 auto;
-  width: $galleryHeight;
-  height: $galleryWidth;
+  //width: $galleryWidth *1.5;
+  width: $galleryWidth;
+  height: $galleryHeight;
   position: relative;
-  perspective: 2000px;
+  perspective: 1500px;
+  //transform: rotate(5deg);
 }
 
 .gallery-m-f {
@@ -274,7 +276,7 @@ $galleryColor: aquamarine;
 }
 
 .move-gallery {
-  //transform: rotateX(5deg) rotateY(0deg);
+  //transform: rotateX(5deg) rotateY(-60deg);
   animation: gallery-animation infinite 20s linear;
 }
 
