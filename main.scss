@@ -182,10 +182,32 @@ $galleryHeight: 150px;
 $galleryWidth: 200px;
 $axisZGallery: 300px;
 
+@mixin btns() {
+  position: absolute;
+  font-size: 70px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: #111;
+  top: 40px;
+}
+
 .fixed {
   width: 900px;
   height: 200px;
   margin: 0 auto;
+  position: relative;
+}
+
+.btn-fg1 {
+  @include btns();
+  left: 0;
+}
+
+.btn-fg2 {
+  @include btns();
+  right: 0;
 }
 
 .future-gallery {
@@ -259,3 +281,7 @@ $axisZGallery: 300px;
   50% { transform: rotateX(1deg) rotateY(-180deg); }
   to { transform: rotateX(-1deg) rotateY(-360deg); }
 }
+
+//**********************************
+//--- ROLLER SELECT
+//**********************************
