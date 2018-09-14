@@ -23,6 +23,19 @@ body {
     text-align: center;
     margin: 70px;
     font-size: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 45px;
+      width: 600px;
+      height: 3px;
+      background-color: white;
+
+    }
   }
 }
 
@@ -298,10 +311,10 @@ $galleryColor: aquamarine;
 }
 
 .future-gallery {
-  margin: 0 auto;
+  margin: 120px auto 0 auto;
   //width: $galleryWidth *1.5;
   width: $galleryWidth;
-  height: $galleryHeight;
+  height: $galleryHeight; // -> only in this selector. Another perspective with height 0 or more :)
   position: relative;
   perspective: 1500px;
   //transform: rotate(5deg);
@@ -382,7 +395,7 @@ $axisZRoller: 34px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 //---
