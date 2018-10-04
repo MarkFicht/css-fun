@@ -1,6 +1,6 @@
 # My CSS repo for fun things!
 
-[DEMO](https://markficht.github.io/css-fun/)
+[DEMO](https://markficht.github.io/css-fun/build)
 
 This repo is a collection of different styles and 3D animations.<br/> 
 At this moment I have 3 things here: simple logo, 3D moving cube, 3D future gallery
