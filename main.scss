@@ -5,14 +5,15 @@
 }
 
 body {
-  //background-color: #222;
-
   //background: rgb(131,58,180);
   //background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 
   //background: rgb(30,116,196);
   //background: radial-gradient(circle, rgba(10,71,146,1) 0%, rgba(9,40,55,1) 100%);
-  background: radial-gradient(ellipse at bottom, rgba(10,71,146,1) 0%, rgba(9,40,55,1) 100%);
+
+  //background: radial-gradient(ellipse at bottom, rgba(10,66,136,1) 0%, rgba(9,35,45,1) 100%);
+
+  background: url('img/bg1.png');
 
   color: #eee;
 }
@@ -376,7 +377,7 @@ $galleryColor: aquamarine;
 
 .move-gallery {
   //transform: rotateX(5deg) rotateY(-60deg);
-  animation: gallery-animation infinite 20s linear;
+  animation: gallery-animation infinite 30s linear;
 }
 
 @keyframes gallery-animation {
