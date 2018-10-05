@@ -1,0 +1,153 @@
+$navCubeHeight: 80px;
+$navCubeWidth: 120px;
+
+$colors: (
+        c1: #F1EE31,
+        c2: #E27E02,
+        c3: #26EEEE,
+        c4: #8ED613,
+);
+@for $i from 1 through 4 {
+  .nav > ul > li:nth-child(#{$i}) > a > span:after { background-color: map_get($colors, c#{$i}) }
+}
+@for $i from 1 through 2 {
+  .nav > ul > li:nth-child(#{4+$i}) > a > span:after { background-color: map_get($colors, c#{$i}) }
+}
+
+//--- LIST
+.nav {
+  background-image: url("./img/bg3.png");
+  width: calc(100% - 40px);
+  min-width: $navCubeWidth*7;
+  height: $navCubeHeight*2.5;
+  margin: 20px 20px;
+  position: absolute;
+}
+
+.nav > ul {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav > ul > li {
+  list-style: none;
+  position: relative;
+  margin: 0 4px;
+
+  & > a {
+    width: $navCubeWidth;
+    height: $navCubeHeight;
+    display: block;
+    transition: .5s;
+    background-color: #ccc;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: $navCubeWidth;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    transition: .5s;
+    opacity: .35;
+    filter: blur(2px);
+    transform: scale(1.02);
+  }
+
+  &:hover:before {
+    opacity: .25;
+    transition-delay: .15s;
+    transform: scale(.9);
+  }
+
+  &:hover > a {
+    transform: translateY(-15px);
+  }
+}
+
+//--- CUBE STYLE LIST
+.nav > ul > li > a > span {
+  width: 100%;
+  height: 100%;
+}
+
+.nav > ul > li > a > span:before {
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #262626;
+  font-size: 17px;
+  font-weight: bold;
+  transform-origin: top;
+  transition: transform .5s;
+}
+
+.nav > ul > li:hover > a > span:before {
+  transform: rotateX(90deg) translateY(-50%);
+}
+
+.nav > ul > li > a > span:after {
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  color: #262626;
+  font-size: 17px;
+  font-weight: bold;
+  transform-origin: bottom;
+  transition: transform .5s;
+  transform: rotateX(90deg) translateY(50%);
+}
+
+.nav > ul > li:hover > a > span:after {
+  transform: rotateX(0deg) translateY(0);
+}
+
+//--- CONTENT IN LIST
+.nav > ul > li:nth-child(1) > a > span:before,
+.nav > ul > li:nth-child(1) > a > span:after {
+  content: 'Future slider';
+}
+
+.nav > ul > li:nth-child(2) > a > span:before,
+.nav > ul > li:nth-child(2) > a > span:after {
+  content: 'Moving cube';
+}
+
+.nav > ul > li:nth-child(3) > a > span:before,
+.nav > ul > li:nth-child(3) > a > span:after {
+  content: 'Rainbow :)';
+}
+
+.nav > ul > li:nth-child(4) > a > span:before,
+.nav > ul > li:nth-child(4) > a > span:after {
+  content: 'Simple logo';
+}
+
+.nav > ul > li:nth-child(5) > a > span:before,
+.nav > ul > li:nth-child(5) > a > span:after {
+  content: 'Cool btns';
+}
+
+.nav > ul > li:nth-child(6) > a > span:before,
+.nav > ul > li:nth-child(6) > a > span:after {
+  content: 'Roller select';
+}
