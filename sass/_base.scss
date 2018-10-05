@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  //background: rgb(131,58,180);
+  //background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+  //background: rgb(30,116,196);
+  //background: radial-gradient(circle, rgba(10,71,146,1) 0%, rgba(9,40,55,1) 100%);
+
+  //background: radial-gradient(ellipse at bottom, rgba(10,66,136,1) 0%, rgba(9,35,45,1) 100%);
+
+  background: url('img/bg1.png');
+
+  color: #eee;
+}
+
+.container {
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin: 80px;
+    font-size: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 45px;
+      width: 600px;
+      height: 3px;
+      background-color: white;
+
+    }
+  }
+}
+

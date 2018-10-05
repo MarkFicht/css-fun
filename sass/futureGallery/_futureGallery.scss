@@ -1,0 +1,107 @@
+//**********************************
+//--- FUTURE GALLERY
+//**********************************
+.fixed {
+  width: 900px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@mixin btns() {
+  position: absolute;
+  font-size: 70px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  top: 40px;
+  color: $galleryColor;
+  text-shadow: 0 0 10px rgba(0,0,0,0.99);
+}
+
+.move-gallery {
+  //transform: rotateX(5deg) rotateY(-60deg);
+  animation: gallery-animation infinite 30s linear;
+}
+
+@keyframes gallery-animation {
+  from { transform: rotateX(-1deg) rotateY(0deg); }
+  50% { transform: rotateX(1deg) rotateY(-180deg); }
+  to { transform: rotateX(-1deg) rotateY(-360deg); }
+}
+
+//**********************************
+
+.btn-fg1 {
+  @include btns();
+  left: 0;
+}
+
+.btn-fg2 {
+  @include btns();
+  right: 0;
+}
+
+.future-gallery {
+  margin: 120px auto 0 auto;
+  //width: $galleryWidth *1.5;
+  width: $galleryWidth;
+  height: $galleryHeight; // -> only in this selector. Another perspective with height 0 or more :)
+  position: relative;
+  perspective: 1500px;
+  //transform: rotate(5deg);
+}
+
+.gallery-m-f {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.gallery-m-f > div {
+  width: $galleryWidth;
+  height: $galleryHeight;
+  border: 3px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: .9;
+}
+
+.gallery-future1 {
+  background-color: $galleryColor;
+  transform: rotateY(0deg) translateZ($axisZGallery);
+}
+
+.gallery-future2 {
+  background-color: $galleryColor;
+  transform: rotateY(60deg) translateZ($axisZGallery);
+}
+
+.gallery-future3 {
+  background-color: $galleryColor;
+  transform: rotateY(120deg) translateZ($axisZGallery);
+}
+
+.gallery-future4 {
+  background-color: $galleryColor;
+  transform: rotateY(180deg) translateZ($axisZGallery);
+}
+
+.gallery-future5 {
+  background-color: $galleryColor;
+  transform: rotateY(240deg) translateZ($axisZGallery);
+}
+
+.gallery-future6 {
+  background-color: $galleryColor;
+  transform: rotateY(300deg) translateZ($axisZGallery);
+}

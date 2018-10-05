@@ -1,0 +1,49 @@
+//**********************************
+//--- RAINBOW BORDER SHADOW
+//**********************************
+@keyframes rainbowGradient {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+//**********************************
+
+.rainbow-border {
+  position: relative;
+  margin: 100px auto;
+  width: $rainbowBorderWidth;
+  height: $rainbowBorderHeight;
+  //background: linear-gradient(0deg, #000, #262626);
+  background: #111;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 1px #fff;
+    color: #111;
+    letter-spacing: 5px;
+  }
+
+  &:before, &:after {
+    content: '';
+    //width: calc(100% + 10px);
+    //height: calc(100% + 10px);
+    width: $rainbowBorderWidth + $rainbowBorderSize*2;
+    height: $rainbowBorderHeight + $rainbowBorderSize*2;
+    position: absolute;
+    top: - $rainbowBorderSize;
+    left: - $rainbowBorderSize;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 500%;
+    z-index: -1;
+    animation: rainbowGradient 25s linear infinite;
+  }
+
+  &:after {
+    filter: blur(30px);
+  }
+}
