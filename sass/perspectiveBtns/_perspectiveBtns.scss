@@ -1,0 +1,102 @@
+//**********************************
+//--- PERSPECTIVE BUTTONS
+//**********************************
+
+.fixed-clip-path {
+  width: 900px;
+  height: 500px;
+  margin: 0 auto 100px;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  position: relative;
+  background-color: #eee;
+  color: #222222;
+}
+
+.clip-bg1, .clip-bg2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.clip-bg1 {
+  -webkit-clip-path: polygon(63% 70%, 100% 6%, 100% 100%, 6% 100%);
+  clip-path: polygon(63% 70%, 100% 6%, 100% 100%, 6% 100%);
+  z-index: 2;
+  background-color: tomato;
+}
+
+.clip-bg2 {
+  -webkit-clip-path: polygon(53% 60%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(53% 60%, 100% 0, 100% 100%, 0% 100%);
+  z-index: 1;
+  background-color: darken(tomato, 50%);
+}
+
+//---
+.container-clip-path {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-template-rows: auto;
+  align-self: center;
+  margin: 0 50px;
+  z-index: 3;
+}
+
+//--
+#cp-left > h3 {
+  text-align: center;
+  font-size: 55px;
+}
+
+//---
+#cp-right > ul {
+  list-style-type: none;
+  perspective: 1000px;
+
+  li {
+    display: grid;
+    grid-template-columns: 20% auto;
+
+    &:nth-child(1) button {
+      background: #D5A7BD;
+      top: -86px;
+      z-index: 2;
+    }
+
+    &:nth-child(2) button {
+      background: #FFCFC8;
+      z-index: 1;
+    }
+
+    &:nth-child(3) button {
+      background: #FFE6C8;
+      top: 86px;
+    }
+
+    button {
+      display: grid;
+      grid-template-columns: 20% auto;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #333;
+      width: 400px;
+      height: 100px;
+      transform: rotateY(-30deg) rotateX(15deg);
+      mix-blend-mode: multiply;
+      position: absolute;
+      border-bottom: 4px solid rgba(0,0,0, .2);
+      outline: none;
+
+      &:hover {
+        transform: rotateY(-22deg) rotateX(7deg) scale(1.05);
+        transition: transform .5s ease-out;
+        z-index: 3;
+        mix-blend-mode: normal;
+      }
+    }
+  }
+}

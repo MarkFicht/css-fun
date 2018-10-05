@@ -1,0 +1,70 @@
+//**********************************
+//--- ROLLER SELECT
+//**********************************
+@keyframes roller-animation {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(-360deg); }
+}
+
+//**********************************
+
+.roller-select {
+  width: 900px;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//---
+.roller-position {
+  width: 200px;
+  height: 50px;
+  position: relative;
+  margin-right: 50px;
+  perspective: 900px;
+  perspective-origin: -120%;
+  //perspective-origin: -120% 300%;
+}
+
+.roller {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  //transform: rotateY(90deg); // helping for setting axis Z
+  animation: roller-animation infinite 12s linear;
+}
+
+.roller > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.roller-option1 {
+  transform: rotateX(0deg) translateZ($axisZRoller);
+}
+
+.roller-option2 {
+  transform: rotateX(72deg) translateZ($axisZRoller);
+}
+
+.roller-option3 {
+  transform: rotateX(144deg) translateZ($axisZRoller);
+}
+
+.roller-option4 {
+  transform: rotateX(216deg) translateZ($axisZRoller);
+}
+
+.roller-option5 {
+  transform: rotateX(288deg) translateZ($axisZRoller);
+}
