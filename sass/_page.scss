@@ -17,11 +17,11 @@ $colors: (
 //--- LIST
 .nav {
   background-image: url("./img/bg3.png");
-  width: calc(100% - 40px);
+  width: 100%;
   min-width: $navCubeWidth*7;
   height: $navCubeHeight*2.5;
-  margin: 20px 20px;
-  position: absolute;
+  margin: 25px 0;
+  position: relative;
 }
 
 .nav > ul {
@@ -150,4 +150,66 @@ $colors: (
 .nav > ul > li:nth-child(6) > a > span:before,
 .nav > ul > li:nth-child(6) > a > span:after {
   content: 'Roller select';
+}
+
+//**********************************
+
+.choose-style {
+  background-image: url("./img/bg3.png");
+  color: #262626;
+  width: $navCubeWidth*7;
+  height: $navCubeHeight*7;
+  position: absolute;
+  top: $navCubeHeight*3.2;
+  left: 50%;
+  transform: translate(-50%);
+
+  & h1 {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+}
+
+.display-style {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.display-style > .hide-style {
+  display: none;
+}
+
+//**********************************
+
+@keyframes waitForIt {
+  0% {
+    filter: blur(0);
+  }
+  35% {
+    filter: blur(20px);
+  }
+  70% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
+@for $i from 1 through 7 {
+  .waiting span:nth-child(#{$i}) { animation-delay: #{$i/10}s }
+}
+
+.waiting span {
+  letter-spacing: 20px;
+  font-size: 75px;
+  animation: waitForIt 4s linear infinite;
 }
