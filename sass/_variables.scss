@@ -22,21 +22,25 @@ $fgForScale: 100%;
 $galleryColor: #9cf;
 $howManySliders: 6;
 
-//--- LOGO M.F.
-$widthMFLogo: 310px;
-$heightMFLogo: 126px;
-$MFAnimationTime: .5s;
+//--- MOVING CUBE
+$cubeSize: 140px;
+$axisZCube: 70px; // 1/2 cubeSize
 
-//--- DANCING CUBE
-$cubeSize: 100px;
-$axisZCube: 50px; // 1/2 cubeSize
+//--- RAINBOW BORDER SHADOW
+$rainbowBorderSize: 5px;
+$rainbowBorderWidth: 400px;
+$rainbowBorderHeight: 250px;
+
+//--- LOGO M.F.
+$colorMF1: map_get($colors, c3);
+$colorMF2: #262626;
+$borderMF: 12px;
+$widthMFLogo: 350px;
+$heightMFLogo: 150px;
+$scaleMF: 0.8;
+$MFAnimationTime: .5s;
 
 //--- ROLLER SELECT
 $axisZRoller: 34px;
-
-//--- RAINBOW BORDER SHADOW
-$rainbowBorderSize: 2px;
-$rainbowBorderWidth: 400px;
-$rainbowBorderHeight: 250px;
 
 //--- PERSPECTIVE BUTTONS

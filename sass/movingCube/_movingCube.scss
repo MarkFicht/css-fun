@@ -1,13 +1,20 @@
 //**********************************
-//--- DANCING CUBE
+//--- MOVING CUBE
 //**********************************
-.dance {  // working only with margin in .cube > div
+
+.dance {  // with margin in .cube > div, better effect :)
   animation: dancing infinite 3s linear;
 }
 
+//--- Maybe btns in the future :)
+.move-left-cube {
+  transform: rotateX(30deg) rotateY(0deg);
+}
+
 @keyframes dancing {
-  from { transform: rotateX(10deg) rotateY(0deg); }
-  to { transform: rotateX(10deg) rotateY(360deg); }
+  from { transform: rotateX(-15deg) rotateY(0deg); }
+  50% { transform: rotateX(15deg) rotateY(180deg); }
+  to { transform: rotateX(-15deg) rotateY(360deg); }
 }
 
 //**********************************
@@ -17,7 +24,7 @@
   width: $cubeSize;
   height: $cubeSize;
   position: relative;
-  //perspective: 1000px;
+  perspective: 1000px;
 }
 
 .cube {
@@ -26,19 +33,21 @@
   position: absolute;
   transform-style: preserve-3d;
   transition: 1s transform linear;
-  //perspective: 1000px;
 }
 
 .cube > div {
   width: $cubeSize;
   height: $cubeSize;
   border: 7px solid black;
-  //border-radius: 50%;
-  //margin: 200px; // IMPORTANT FOR DANCING CUBE ! for X Y
-  //margin: 200px 0;
-  margin: 0 200px;
+  //margin: 200px;      // IMPORTANT FOR MOVING CUBE ! for X Y
+  //margin: 200px 0;    // or
+  margin: 0 170px;
   box-sizing: border-box;
   position: absolute;
+  text-align: center;
+  line-height: $cubeSize - 14px;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .front {
@@ -69,8 +78,4 @@
 .left {
   background-color: pink;
   transform: rotateY(-90deg) translateZ($axisZCube);
-}
-
-.move-left-cube {
-  transform: rotateX(30deg) rotateY(0deg);
 }

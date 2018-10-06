@@ -4,6 +4,12 @@ import './main.scss';
 $(document).ready( function () {
     console.log('%c ------ DOM loaded ------', 'color: green; font-weight: bold;');
 
+// ****** H1 TEXT ****** //
+    const h1Text = $('h1');
+    const changeText = (id) => {
+        
+    }
+
 // ****** NAV BTNS ****** //
     const navBtns = $('.nav li');
     const styles = $('.display-style > div');
@@ -19,7 +25,7 @@ $(document).ready( function () {
         styles.eq(chooseStyle).removeClass('hide-style');  //0 is for '.waiting'
     })
 
-// ****** NAV BTNS ****** //
+// ****** FUTURE GALLERY ****** //
     const btnFG1 = $('#btn-fg1');
     const btnFG2 = $('#btn-fg2');
     const divWithFG = $('.move-fg');
@@ -51,5 +57,12 @@ $(document).ready( function () {
         smoothTransition -= 60;
         divWithFG.addClass(`show-fg${currentFG}`).css('transform', `rotateY(${smoothTransition}deg)`);
     })
+
+// ****** MOVING CUBE ****** //
+// ****** RAINBOW BORDER ****** //
+// ****** SIMPLE LOGO ****** //
+// ****** PERSPECTIVE BTNS ****** //
+// ****** ROLLER SELECT 3D ****** //
+
 
 })
