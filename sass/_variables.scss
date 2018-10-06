@@ -1,3 +1,27 @@
+//--- BASE
+$colors: (
+        c1: tomato,
+        c2: #E27E02,
+        c3: #369,
+        c4: #0EB400,
+        c5: #E27,     //Test this color in the future. Now my base on 4.
+        c6: #e99,     //Test this color in the future. Now my base on 4.
+);
+
+// *** Its main height for nav, menu, layout *** //
+$navCubeHeight: 80px;
+$navCubeWidth: 120px;
+
+//**********************************
+
+//--- FUTURE GALLERY
+$galleryHeight: 150px;
+$galleryWidth: 200px;
+$axisZGallery: 300px;
+$fgForScale: 100%;
+$galleryColor: #9cf;
+$howManySliders: 6;
+
 //--- LOGO M.F.
 $widthMFLogo: 310px;
 $heightMFLogo: 126px;
@@ -6,12 +30,6 @@ $MFAnimationTime: .5s;
 //--- DANCING CUBE
 $cubeSize: 100px;
 $axisZCube: 50px; // 1/2 cubeSize
-
-//--- FUTURE GALLERY
-$galleryHeight: 150px;
-$galleryWidth: 200px;
-$axisZGallery: 300px;
-$galleryColor: aquamarine;
 
 //--- ROLLER SELECT
 $axisZRoller: 34px;

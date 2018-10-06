@@ -1,13 +1,7 @@
-$navCubeHeight: 80px;
-$navCubeWidth: 120px;
+//**********************************
+//--- LAYOUT
+//**********************************
 
-$colors: (
-        c1: tomato,
-        c2: #E27E02,
-        c3: #369,
-        c4: #0EB400,
-        c5: #E27,   //Test this color in the future. Now my base on 4.
-);
 @for $i from 1 through 4 {
   .nav > ul > li:nth-child(#{$i}) > a > span:after { background-color: map_get($colors, c#{$i}) }
 }
@@ -202,4 +196,15 @@ section.display-style > .hide-style {
   letter-spacing: 3px;
   font-size: 75px;
   animation: waitForIt 4s linear infinite;
+}
+
+//**********************************
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 25px;
 }

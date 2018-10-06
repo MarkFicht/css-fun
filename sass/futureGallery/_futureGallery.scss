@@ -1,66 +1,84 @@
 //**********************************
 //--- FUTURE GALLERY
 //**********************************
-.fixed {
-  width: 900px;
-  height: 200px;
-  margin: 0 auto;
-  position: relative;
-}
 
 @mixin btns() {
   position: absolute;
-  font-size: 70px;
+  font-size: 80px;
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
-  top: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
   color: $galleryColor;
-  text-shadow: 0 0 10px rgba(0,0,0,0.99);
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
 
+//--- ANIMATIONS
 .move-gallery {
   //transform: rotateX(5deg) rotateY(-60deg);
   animation: gallery-animation infinite 30s linear;
 }
 
+@for $i from 1 through $howManySliders {
+  .show-fg#{$i} {
+    transform: rotateY(#{$i*360/$howManySliders}deg);
+    transition: all .7s;
+  }
+}
+
+@for $i from 1 through $howManySliders {
+  .gallery-future#{$i} {
+    //background-color: rgba(map_get($colors, c#{$i}), .5);
+    transform: rotateY(#{$i*360/$howManySliders}deg) translateZ($axisZGallery);
+  }
+}
+
 @keyframes gallery-animation {
-  from { transform: rotateX(-1deg) rotateY(0deg); }
-  50% { transform: rotateX(1deg) rotateY(-180deg); }
-  to { transform: rotateX(-1deg) rotateY(-360deg); }
+  from { transform: /*rotateX(-1deg)*/ rotateY(0deg); }
+  50% { transform: /*rotateX(1deg)*/ rotateY(-180deg); }
+  to { transform: /*rotateX(-1deg)*/ rotateY(-360deg); }
 }
 
 //**********************************
 
-.btn-fg1 {
-  @include btns();
-  left: 0;
+.div-fg {
+  width: $fgForScale;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
-.btn-fg2 {
+#btn-fg1 {
   @include btns();
-  right: 0;
+  left: 20px;
+}
+
+#btn-fg2 {
+  @include btns();
+  right: 20px;
 }
 
 .future-gallery {
-  margin: 120px auto 0 auto;
+  position: relative;
+  margin: $navCubeHeight*3.5 auto 0 auto;
+  transform: translate(0, -50%);
   //width: $galleryWidth *1.5;
   width: $galleryWidth;
   height: $galleryHeight; // -> only in this selector. Another perspective with height 0 or more :)
-  position: relative;
   perspective: 1500px;
   //transform: rotate(5deg);
 }
 
-.gallery-m-f {
+.move-fg {
   width: 100%;
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
 }
 
-.gallery-m-f > div {
+.move-fg > div {
   width: $galleryWidth;
   height: $galleryHeight;
   border: 3px solid black;
@@ -73,35 +91,6 @@
   color: #222;
   font-size: 40px;
   font-weight: bold;
-  opacity: .9;
-}
-
-.gallery-future1 {
-  background-color: $galleryColor;
-  transform: rotateY(0deg) translateZ($axisZGallery);
-}
-
-.gallery-future2 {
-  background-color: $galleryColor;
-  transform: rotateY(60deg) translateZ($axisZGallery);
-}
-
-.gallery-future3 {
-  background-color: $galleryColor;
-  transform: rotateY(120deg) translateZ($axisZGallery);
-}
-
-.gallery-future4 {
-  background-color: $galleryColor;
-  transform: rotateY(180deg) translateZ($axisZGallery);
-}
-
-.gallery-future5 {
-  background-color: $galleryColor;
-  transform: rotateY(240deg) translateZ($axisZGallery);
-}
-
-.gallery-future6 {
-  background-color: $galleryColor;
-  transform: rotateY(300deg) translateZ($axisZGallery);
+  background-color: rgba($galleryColor, .85);
+  //opacity: .88;
 }
