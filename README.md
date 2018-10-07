@@ -16,6 +16,8 @@ Next:
 - If you want create build: `npm run build`
 - If you want to view changes live: `npm start` OR `npm run start`
 
+Testing on browsers: Chrome, Opera.
+
 ## Built of ...
 
 - [Webpack](https://webpack.js.org/)

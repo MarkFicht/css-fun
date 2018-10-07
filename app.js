@@ -24,7 +24,7 @@ $(document).ready( function () {
                 textIntoH1 = 'Cool logo - HOVER ON ME';
                 break;
             case 5:
-                textIntoH1 = 'Perspective buttons in cool layout';
+                textIntoH1 = 'Perspective buttons on simple layout';
                 break;
             case 6:
                 textIntoH1 = '3D roller - Instead select tag';

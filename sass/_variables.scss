@@ -41,7 +41,11 @@ $heightMFLogo: 150px;
 $scaleMF: 0.8;
 $MFAnimationTime: .5s;
 
-//--- ROLLER SELECT
-$axisZRoller: 34px;
-
 //--- PERSPECTIVE BUTTONS
+$widthPerspectiveBtns: $navCubeWidth*6;
+$heightPerspectiveBtns: $navCubeHeight*5.5;
+
+//--- ROLLER SELECT
+$widthRoller: 250px;
+$heightRoller: 100px;
+$axisZRoller: 68px;

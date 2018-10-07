@@ -3,16 +3,16 @@
 //**********************************
 
 .fixed-clip-path {
-  width: 900px;
-  height: 500px;
-  margin: 0 auto 100px;
-  border: 1px solid red;
+  position: absolute;
+  width: $widthPerspectiveBtns;
+  height: $heightPerspectiveBtns;
+  margin-top: 15px;
+  //border: 1px solid red;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  position: relative;
   background-color: #eee;
-  color: #222222;
+  color: #262626;
 }
 
 .clip-bg1, .clip-bg2 {
@@ -32,7 +32,8 @@
   -webkit-clip-path: polygon(53% 60%, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(53% 60%, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
-  background-color: darken(tomato, 50%);
+  background-color: lighten(tomato, 10%);
+  //background-color: darken(tomato, 50%);
 }
 
 //---
@@ -41,38 +42,41 @@
   grid-template-columns: 50% auto;
   grid-template-rows: auto;
   align-self: center;
-  margin: 0 50px;
+  margin: 0 30px 50px 30px;
   z-index: 3;
 }
 
 //--
 #cp-left > h3 {
   text-align: center;
-  font-size: 55px;
+  font-size: 45px;
 }
 
 //---
 #cp-right > ul {
   list-style-type: none;
-  perspective: 1000px;
+  perspective: 800px;
 
   li {
-    display: grid;
-    grid-template-columns: 20% auto;
+    //display: grid;
+    //grid-template-columns: 20% auto;
 
     &:nth-child(1) button {
       background: #D5A7BD;
       top: -86px;
+      right: 30px;
       z-index: 2;
     }
 
     &:nth-child(2) button {
       background: #FFCFC8;
+      right: 30px;
       z-index: 1;
     }
 
     &:nth-child(3) button {
-      background: #FFE6C8;
+      background: #FFF6C8;
+      right: 30px;
       top: 86px;
     }
 
@@ -81,21 +85,29 @@
       grid-template-columns: 20% auto;
       border-radius: 15px;
       cursor: pointer;
-      font-size: 30px;
-      color: #333;
-      width: 400px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #262626;
+      width: 250px;
       height: 100px;
-      transform: rotateY(-30deg) rotateX(15deg);
+      transition: all .3s;
+      transform: rotateY(-30deg) rotateX(20deg);
       mix-blend-mode: multiply;
       position: absolute;
       border-bottom: 4px solid rgba(0,0,0, .2);
       outline: none;
 
       &:hover {
-        transform: rotateY(-22deg) rotateX(7deg) scale(1.05);
+        transform: rotateY(-20deg) rotateX(9deg) scale(1.06);
         transition: transform .5s ease-out;
         z-index: 3;
         mix-blend-mode: normal;
+      }
+
+      &:active {
+        transition: all .15s;
+        transform: rotateY(-20deg) rotateX(9deg) scale(1.03);
       }
     }
   }
