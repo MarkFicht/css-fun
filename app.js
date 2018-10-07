@@ -6,8 +6,34 @@ $(document).ready( function () {
 
 // ****** H1 TEXT ****** //
     const h1Text = $('h1');
-    const changeText = (id) => {
-        
+    let textIntoH1 = 'Wybierz jeden z moich styli';
+    h1Text.text(textIntoH1);
+
+    const changeText = id => {
+        switch (id) {
+            case 1:
+                textIntoH1 = 'Future gallery - Click on arrows!';
+                break;
+            case 2:
+                textIntoH1 = '3D cube built - All in prue CSS';
+                break;
+            case 3:
+                textIntoH1 = 'Simple & beauty effect.';
+                break;
+            case 4:
+                textIntoH1 = 'Cool logo - HOVER ON ME';
+                break;
+            case 5:
+                textIntoH1 = 'Perspective buttons in cool layout';
+                break;
+            case 6:
+                textIntoH1 = '3D roller - Instead select tag';
+                break;
+            default:
+                textIntoH1 = 'Wybierz jeden z moich styli';
+        }
+
+        h1Text.text(textIntoH1);
     }
 
 // ****** NAV BTNS ****** //
@@ -22,6 +48,7 @@ $(document).ready( function () {
         divWithFG.addClass('move-gallery');     // Hoisting :)
 
         let chooseStyle = $(this).data('id');
+        changeText(chooseStyle);
         styles.eq(chooseStyle).removeClass('hide-style');  //0 is for '.waiting'
     })
 

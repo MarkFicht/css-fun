@@ -38,44 +38,50 @@
 .cube > div {
   width: $cubeSize;
   height: $cubeSize;
-  border: 7px solid black;
+  //border: $cubeBorder solid black;
   //margin: 200px;      // IMPORTANT FOR MOVING CUBE ! for X Y
   //margin: 200px 0;    // or
   margin: 0 170px;
   box-sizing: border-box;
   position: absolute;
   text-align: center;
-  line-height: $cubeSize - 14px;
+  line-height: $cubeSize - $cubeBorder*2;
   font-weight: bold;
   font-size: 30px;
 }
 
 .front {
-  background-color: green;
+  background-color: map_get($colors, c1);
+  border: $cubeBorder solid darken(map_get($colors, c1), 10%);
   transform: rotateX(0deg) translateZ($axisZCube);
 }
 
 .back {
-  background-color: blue;
+  background-color: map_get($colors, c2);
+  border: $cubeBorder solid darken(map_get($colors, c2), 10%);
   transform: rotateY(180deg) translateZ($axisZCube);
 }
 
 .bottom {
-  background-color: red;
+  background-color: map_get($colors, c5);
+  border: $cubeBorder solid darken(map_get($colors, c5), 10%);
   transform: rotateX(-90deg) translateZ($axisZCube);
 }
 
 .top {
-  background-color: blueviolet;
+  background-color: map_get($colors, c6);
+  border: $cubeBorder solid darken(map_get($colors, c6), 10%);
   transform: rotateX(90deg) translateZ($axisZCube);
 }
 
 .right {
-  background-color: orange;
+  background-color: map_get($colors, c3);
+  border: $cubeBorder solid darken(map_get($colors, c3), 10%);
   transform: rotateY(90deg) translateZ($axisZCube);
 }
 
 .left {
-  background-color: pink;
+  background-color: map_get($colors, c4);
+  border: $cubeBorder solid darken(map_get($colors, c4), 10%);
   transform: rotateY(-90deg) translateZ($axisZCube);
 }

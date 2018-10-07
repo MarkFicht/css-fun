@@ -11,8 +11,13 @@
   cursor: pointer;
   top: 50%;
   transform: translate(0, -50%);
+  transition: all .2s;
   color: $galleryColor;
-  text-shadow: 0 0 15px rgba(0,0,0,0.8);
+  text-shadow:
+          0 1px #262626,
+          1px 0 #262626,
+          -1px 0 #262626,
+          0 -1px #262626;
 }
 
 //--- ANIMATIONS
@@ -60,6 +65,18 @@
   right: 20px;
 }
 
+#btn-fg1, #btn-fg2 {
+  transition: all .2s;
+
+  &:hover {
+    transform: translate(0, -50%) scale(1.2);
+  }
+  &:active {
+    color: darken($galleryColor, 5%);
+    transform: translate(0, -50%) scale(1.1);
+  }
+}
+
 .future-gallery {
   position: relative;
   margin: $navCubeHeight*3.5 auto 0 auto;
@@ -67,7 +84,7 @@
   //width: $galleryWidth *1.5;
   width: $galleryWidth;
   height: $galleryHeight; // -> only in this selector. Another perspective with height 0 or more :)
-  perspective: 1500px;
+  perspective: 1200px;
   //transform: rotate(5deg);
 }
 
@@ -81,8 +98,8 @@
 .move-fg > div {
   width: $galleryWidth;
   height: $galleryHeight;
-  border: 3px solid black;
-  border-radius: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
   display: flex;
