@@ -36,10 +36,10 @@ $(document).ready( function () {
         h1Text.text(textIntoH1);
     }
 
+
 // ****** NAV BTNS ****** //
     const navBtns = $('.nav li');
     const styles = $('.display-style > div');
-    // console.log(navBtns, styles);
 
     navBtns.on('click', function() {
         // console.table([this, $(this)]); console.log('click', this, $(this));
@@ -51,6 +51,7 @@ $(document).ready( function () {
         changeText(chooseStyle);
         styles.eq(chooseStyle).removeClass('hide-style');  //0 is for '.waiting'
     })
+
 
 // ****** FUTURE GALLERY ****** //
     const btnFG1 = $('#btn-fg1');
@@ -85,11 +86,23 @@ $(document).ready( function () {
         divWithFG.addClass(`show-fg${currentFG}`).css('transform', `rotateY(${smoothTransition}deg)`);
     })
 
+
 // ****** MOVING CUBE ****** //
 // ****** RAINBOW BORDER ****** //
 // ****** SIMPLE LOGO ****** //
 // ****** PERSPECTIVE BTNS ****** //
+
+
 // ****** ROLLER SELECT 3D ****** //
+    const myRoller = $('.roller');
+    const oldSelectTag = $('.roller-option');
 
+    const roll = id => {
+        myRoller.attr('class', 'roller');
+        myRoller.addClass(`turn-over${id}`);
+    }
 
+    oldSelectTag.on('change', function () {
+        roll($(this).val());
+    })
 })

@@ -29,10 +29,8 @@ $strings: (
   width: 100%;
   height: $navCubeHeight*2.5;
   margin: 25px 0;
-  min-width: $navCubeWidth*7;
+  min-width: $navCubeWidth*2;
   position: relative;
-  //position: absolute;
-  //top: 25px;
 }
 
 .nav > ul {
@@ -41,15 +39,17 @@ $strings: (
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  margin: 0;
-  padding: 0;
   display: flex;
+  /*Wlaczyc te wlasciwosci tak na 800px szerokosci*/
+  //justify-content: center;
+  //flex-wrap: wrap;
+  //width: 80%;
 }
 
 .nav > ul > li {
   list-style: none;
   position: relative;
-  margin: 0 4px;
+  margin: 15px 4px;
 
   & > a {
     width: $navCubeWidth;
@@ -142,6 +142,11 @@ $strings: (
   width: $navCubeWidth*7;
   height: $navCubeHeight*7;
   position: relative;
+  //box-shadow:
+  //        5px 0 25px #262626,
+  //        0 5px 25px #262626,
+  //        -5px 0 25px #262626,
+  //        0 -5px 25px #262626;
   margin: 0 auto;
   //position: absolute;
   //transform: translate(-50%);
