@@ -191,6 +191,11 @@
   .footer {
     font-size: 16px;
   }
+  // WAITING
+  .waiting span {
+    letter-spacing: 2px;
+    font-size: 50px;
+  }
   // FG
   .future-gallery {
     width: $galleryWidth/1.5;
