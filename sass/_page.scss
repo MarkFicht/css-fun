@@ -27,7 +27,7 @@ $strings: (
 .nav {
   background-image: url("./img/bg3.png");
   width: 100%;
-  height: $navCubeHeight*2.5;
+  height: $navCubeHeight*2.2;
   margin: 25px 0;
   min-width: $navCubeWidth*2;
   position: relative;
@@ -93,8 +93,9 @@ $strings: (
 
 .nav > ul > li > a > span:before {
   //content: '';
-  text-align: center;
-  line-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -114,8 +115,9 @@ $strings: (
 
 .nav > ul > li > a > span:after {
   //content: '';
-  text-align: center;
-  line-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;

@@ -1,9 +1,11 @@
-# My CSS repo for fun things!
+# My CSS repo for creative things!
 
 [DEMO](https://markficht.github.io/css-fun/build)
 
 This repo is a collection of different styles and 3D animations.<br/> 
-At this moment I have 3 things here: simple logo, 3D moving cube, 3D future gallery
+At this moment I have 6 things here like: 3D moving cube, 3D future gallery, etc.
+
+RWD has been added.
 
 ### Installation and configuration
 
@@ -16,7 +18,7 @@ Next:
 - If you want create build: `npm run build`
 - If you want to view changes live: `npm start` OR `npm run start`
 
-Testing on browsers: Chrome, Opera.
+Works on browsers: `Chrome`, `Opera`.
 
 ## Built of ...
 
