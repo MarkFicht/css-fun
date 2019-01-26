@@ -15,7 +15,7 @@ $(document).ready( function () {
                 textIntoH1 = 'Future gallery - Click on arrows!';
                 break;
             case 2:
-                textIntoH1 = '3D cube built - All in prue CSS';
+                textIntoH1 = '3D cube - All in prue CSS';
                 break;
             case 3:
                 textIntoH1 = 'Simple & beauty effect.';

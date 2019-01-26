@@ -1,6 +1,11 @@
 # My CSS repo for creative things!
 
+<!-- ![Screenshot](todo.png) -->
+<div align="center">
+	<img src="screenshot/mystyles.png" height="500" alt="Screenshot" />
+
 [DEMO](https://markficht.github.io/css-fun/build)
+</div>
 
 This repo is a collection of different styles and 3D animations.<br/> 
 At this moment I have 6 things here like: 3D moving cube, 3D future gallery, etc.
